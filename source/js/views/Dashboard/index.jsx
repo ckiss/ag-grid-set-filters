@@ -120,14 +120,13 @@ export default class Dashboard extends Component {
           filter: 'set',
           filterParams: {cellHeight: 20}
         },
-        {headerName: "Age", field: "age", width: 90, filter: 'number'},
-        {headerName: "Country", field: "country", width: 140, filter: 'set'}
+        {headerName: "Age", field: "attrs.age", width: 90, filter: 'number'},
+        {headerName: "Country", field: "attrs.country", width: 140, filter: 'set'}
       ]
     }
   }
 
   onGridColumnsChanged = () => {
-    debugger
     const {filterState} = this.props
     if (filterState && this.api) {
       this.api.setFilterModel(filterState)
@@ -146,7 +145,7 @@ export default class Dashboard extends Component {
           <button onClick={this.loadTableData(true)}>revision table data</button>
         </div>
         <hr />
-        <div className="ag-fresh my-grid">
+        <div className="ag-fresh my-grid" style={{width: '860px'}}>
           <AgGridReact
             ref="grid"
             onGridReady={this.onGridReady}

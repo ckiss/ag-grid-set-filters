@@ -36,5 +36,9 @@ hr {
 .my-grid {
   display: flex;
   height: 400px;
-  width: 100%;
+  width: 860px;
+
+  :first-child {
+    width: 860px;
+  }
 }
